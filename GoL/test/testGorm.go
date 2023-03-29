@@ -8,14 +8,14 @@ import (
 	"gorm.io/gorm"
 )
 
-type Product struct {
-	gorm.Model
-	Code  string
-	Price uint
-}
+// type Product struct {
+// 	gorm.Model
+// 	Code  string
+// 	Price uint
+// }
 
 func main() {
-	db, err := gorm.Open(mysql.Open("root:xww19981223@tcp(127.0.0.1:3306)/ginchat?charset=utf8mb&parseTime=True&loc=Local"), &gorm.Config{})
+	db, err := gorm.Open(mysql.Open("root:xww19981223@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parseTime=True&loc=Local"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
