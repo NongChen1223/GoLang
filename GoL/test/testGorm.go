@@ -15,7 +15,8 @@ import (
 // }
 
 func main() {
-	db, err := gorm.Open(mysql.Open("root:xww19981223@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parseTime=True&loc=Local"), &gorm.Config{})
+	dsn := "root:xww19981223@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
@@ -40,4 +41,6 @@ func main() {
 
 	//delete - 删除product
 	// db.Delete(&product, 1)
+	// 输出hello
+
 }
